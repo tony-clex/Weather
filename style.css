@@ -1,0 +1,157 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.big-box {
+  width: 95%;
+  max-width: 600px; /* Increased size */
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  color: #fff;
+  border-radius: 25px; /* Slightly bigger radius */
+  padding: 50px 40px; /* Increased padding */
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.big-box h1 {
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+#city-input {
+  width: 100%;
+  max-width: 320px;
+  padding: 15px 25px;
+  font-size: 18px;
+  border: 2px solid #4a90e2;
+  border-radius: 35px;
+  box-shadow: 0 6px 12px rgba(74 144 226 / 30%);
+  background: #f0f8ff;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#city-input::placeholder {
+  color: #7a9cc6;
+}
+
+#city-input:focus {
+  border-color: #1c6dd0;
+  box-shadow: 0 8px 16px rgba(28 109 208 / 60%);
+  background: #e6f0ff;
+  color: #000;
+}
+
+#city-input-btn {
+  padding: 15px 40px;
+  font-size: 18px;
+  color: #fff;
+  background: linear-gradient(135deg, #4a90e2, #1c6dd0);
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+#city-input-btn:hover {
+  background: linear-gradient(135deg, #1c6dd0, #4a90e2);
+  box-shadow: 0 8px 20px rgba(19 78 151 / 60%);
+}
+
+/* Optional search button wrapper */
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.search button {
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .big-box {
+    max-width: 90%;
+    padding: 40px 30px;
+  }
+
+  #city-input {
+    max-width: 100%;
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  #city-input-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .big-box {
+    padding: 30px 20px;
+  }
+
+  #city-input {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  #city-input-btn {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+
+  .search button {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    padding: 15px;
+  }
+
+  .big-box {
+    padding: 25px 15px;
+  }
+
+  #city-input {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  #city-input-btn {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+
+  .search button {
+    width: 50px;
+    height: 50px;
+  }
+}

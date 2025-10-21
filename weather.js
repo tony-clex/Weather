@@ -1,8 +1,8 @@
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather";
 const apikey = "7026f3b3e6fb2220b3437fc5aaed9070";
 
-let isCelsius = true; // Current unit
-let currentTempC = 0; // Store temperature in Celsius
+let isCelsius = true; 
+let currentTempC = 0; 
 
 $(document).ready(function () {
   weatherFn("tokyo");
@@ -28,9 +28,9 @@ async function weatherFn(cName) {
     const res = await fetch(url);
     const data = await res.json();
     if (res.ok) {
-      currentTempC = data.main.temp; // Store temperature in Celsius
+      currentTempC = data.main.temp; 
       weathershowFn(data);
-      updateTemperature(currentTempC); // Display temperature in current unit
+      updateTemperature(currentTempC); 
     } else {
       alert("City not found, please try again.");
     }
@@ -51,7 +51,6 @@ function weathershowFn(data) {
   $("#weather-info").fadeIn();
 }
 
-// Update temperature based on selected unit
 function updateTemperature(tempC) {
   if (isCelsius) {
     $("#temperature").text(`${Math.round(tempC)} °C`);

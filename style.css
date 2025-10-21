@@ -1,4 +1,3 @@
-/* Base Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -29,16 +28,15 @@ body {
   font-size: 2.5em;
 }
 
-/* Search bar wrapper */
 .btn-holder {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px; /* space between input and button */
+  gap: 10px;
 }
 
 #city-input {
-  flex: 1 1 200px; /* flexible width, min 200px */
+  flex: 1 1 200px;
   min-width: 150px;
   max-width: 100%;
   padding: 15px 25px;
@@ -64,7 +62,7 @@ body {
 }
 
 #city-input-btn {
-  flex: 0 1 auto; /* button stays its natural width but can shrink */
+  flex: 0 1 auto;
   padding: 15px 40px;
   font-size: 18px;
   color: #fff;
@@ -80,7 +78,23 @@ body {
   box-shadow: 0 8px 20px rgba(19 78 151 / 60%);
 }
 
-/* Optional search buttons (like recent searches) */
+#temp-toggle {
+  margin: 15px 0;
+  padding: 12px 30px;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #4a90e2, #1c6dd0);
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#temp-toggle:hover {
+  background: linear-gradient(135deg, #1c6dd0, #4a90e2);
+  box-shadow: 0 8px 16px rgba(19 78 151 / 60%);
+}
+
 .search {
   display: flex;
   flex-wrap: wrap;
@@ -130,13 +144,14 @@ body {
   }
 
   #city-input {
-    flex: 1 1 100%; /* input takes full width */
+    flex: 1 1 100%;
     font-size: 14px;
     padding: 10px 15px;
   }
 
-  #city-input-btn {
-    width: 100%; /* button takes full width */
+  #city-input-btn,
+  #temp-toggle {
+    width: 100%;
     font-size: 14px;
     padding: 12px 0;
   }
@@ -161,7 +176,8 @@ body {
     padding: 8px 12px;
   }
 
-  #city-input-btn {
+  #city-input-btn,
+  #temp-toggle {
     font-size: 13px;
     padding: 10px 0;
   }

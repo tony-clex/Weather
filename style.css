@@ -113,14 +113,12 @@ body {
   cursor: pointer;
 }
 
-/* Weather Info */
 #weather-info img {
   width: 80px;
   height: 80px;
   margin: 10px 0;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .big-box {
     max-width: 90%;

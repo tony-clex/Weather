@@ -4,19 +4,22 @@ const apikey = "7026f3b3e6fb2220b3437fc5aaed9070";
 let isCelsius = true; 
 let currentTempC = 0; 
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", () => {
   weatherFn("tokyo");
 
-  $("#city-input-btn").on("click", function () {
-    const city = $("#city-input").val().trim();
-    if (city) {
-      weatherFn(city);
+  const cityBtn = document.getElementById("city-input-btn");
+  const tempToggle = document.getElementById("temp-toggle");
+
+  cityBtn.addEventListener("click", () => {
+    const cityInput = document.getElementById("city-input").value.trim();
+    if (cityInput) {
+      weatherFn(cityInput);
     } else {
       alert("Please enter a city name");
     }
   });
 
-  $("#temp-toggle").on("click", function () {
+  tempToggle.addEventListener("click", () => {
     isCelsius = !isCelsius;
     updateTemperature(currentTempC);
   });
@@ -40,21 +43,19 @@ async function weatherFn(cName) {
 }
 
 function weathershowFn(data) {
-  $("#city-name").text(data.name);
-  $("#date").text(moment().format("MMM Do YYYY, h:mm:ss a"));
-  $("#description").text(data.weather[0].description);
-  $("#wind-speed").html(`Wind speed: ${data.wind.speed} m/s`);
-  $("#weather-icon").attr(
-    "src",
-    `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
-  );
-  $("#weather-info").fadeIn();
+  document.getElementById("city-name").textContent = data.name;
+  document.getElementById("date").textContent = moment().format("MMM Do YYYY, h:mm:ss a");
+  document.getElementById("description").textContent = data.weather[0].description;
+  document.getElementById("wind-speed").innerHTML = `Wind speed: ${data.wind.speed} m/s`;
+  document.getElementById("weather-icon").src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+  document.getElementById("weather-info").style.display = "block"; 
 }
 
 function updateTemperature(tempC) {
+  const tempEl = document.getElementById("temperature");
   if (isCelsius) {
-    $("#temperature").text(`${Math.round(tempC)} °C`);
+    tempEl.textContent = `${Math.round(tempC)} °C`;
   } else {
-    $("#temperature").text(`${Math.round(tempC * 9/5 + 32)} °F`);
+    tempEl.textContent = `${Math.round(tempC * 9/5 + 32)} °F`;
   }
 }
